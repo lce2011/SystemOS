@@ -2,6 +2,8 @@
 [ORG 0]
 [BITS 16]
 
+
+
 ;* === === === START === === ===
 _start:
     mov ax, 0x7c0
@@ -9,11 +11,7 @@ _start:
     mov ss, ax
     mov es, ax
 
-    mov si, msg1
-    call println
-    mov si, msg2
-    call println
-    mov si, msg3
+    mov si, boot_msg
     call println
 
     ; offset 50
@@ -65,9 +63,9 @@ newline:
 
 
 ;* === === === DATA === === ===
-msg1: db 'Hello, World!', 0
-msg2: db 'This is a TEST!', 0
-msg3: db 'It works!!!', 0
+boot_msg: db 'Booting SystemOS...', 13, 10, \
+             'Starting SystemOS...', 13, 10, \
+             'Hello, World!', 0
 
 
 
