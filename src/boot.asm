@@ -2,8 +2,6 @@
 [ORG 0]
 [BITS 16]
 
-
-
 ;* === === === START === === ===
 _start:
     mov ax, 0x7c0
@@ -19,10 +17,7 @@ _start:
 
     jmp $
 
-
-
 ;* === === === IO === === ===
-
 
 ;* === === PRINT === ===
 print:
@@ -36,7 +31,6 @@ print:
 
 .done:
     ret
-
 
 ;* === === PRINTLN === ===
 println:
@@ -52,7 +46,6 @@ println:
     call newline
     ret
 
-
 ;* === === NEWLINE === ===
 newline:
     nl: db 13, 10, 0
@@ -60,14 +53,10 @@ newline:
     call print
     ret
 
-
-
 ;* === === === DATA === === ===
 boot_msg: db 'Booting SystemOS...', 13, 10, \
              'Starting SystemOS...', 13, 10, \
              'Hello, World!', 0
-
-
 
 ;* === === === BOOTSIGNATURE === === ===
 times 510 - ($-$$) db 0
